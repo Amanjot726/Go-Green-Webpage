@@ -21,6 +21,37 @@ document.onkeydown = function(e){
           return true;
         }
     };}
+
+// Scroll to top button
+var scrollToTopButton = document.querySelector('#js-top-btn');
+const scrollFunc2 = () => {
+    let y = window.scrollY;
+    if (y > 700) { scrollToTopButton.className = "btn btn-dark show"; }
+    else { scrollToTopButton.className = "btn btn-dark hide"; }
+};
+window.addEventListener("scroll", scrollFunc2);
+
+var pre = document.documentElement.scrollTop || document.body.scrollTop;
+const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+        if(pre<c){
+            return;
+        }
+        else{
+            pre = c;
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 25);
+        }
+    }
+};
+scrollToTopButton.onclick = function (e) {
+    e.preventDefault();
+    pre = document.documentElement.scrollTop || document.body.scrollTop;
+    scrollToTop();
+}
+// END Scroll to top button
+
 function Get_Current_Year(){var current_date = new Date();var current_year = current_date.getFullYear();document.getElementById("get_current_year").innerHTML = current_year;}
 function snackbar(Notification) {var x = document.getElementById("snackbar");x.innerHTML=Notification;x.className = "show";setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);}
 function open_search(){document.getElementById('search_form').style.visibility = "visible";document.getElementById('search_form').style.right="5%";document.getElementById('search-btn').style.display="none";document.getElementById('close-btn').style.display="inline";setTimeout(function(){ document.getElementById('search-input-box').focus() }, 500);}
@@ -76,6 +107,8 @@ function closeNav() {
     document.getElementById("all").style.filter = "none";
     document.getElementById("nav").style.filter = "none";
 }
+
+
 
 
 // function my(){

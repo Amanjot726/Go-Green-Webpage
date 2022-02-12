@@ -1,5 +1,5 @@
 *{padding: 0;margin: 0;box-sizing: border-box;}
-html{scroll-behavior: smooth;}
+/* html{scroll-behavior: smooth;} */
 body{overscroll-behavior-y: none;/* -webkit-touch-callout: none; *//* -webkit-user-select: none; *//* -moz-user-select: none; *//* -ms-user-select: none; *//* -o-user-select: none; *//* user-select: none; */}
 
 p span::-moz-selection{background-color: rgba(161, 238, 110, 0.842);color: rgb(28, 88, 0);}
@@ -43,14 +43,14 @@ img{
    user-select: none;
  }
 
- .myprogress-container {
+.myprogress-container {
     position: fixed;
     width: 100%;
     height: 3px;
     background: #24eb5600;
     z-index: 100000;
-    }
-  .myprogress-bar {
+}
+.myprogress-bar {
     border-radius: 100px;
     position: absolute;
     height: 2.5px;
@@ -61,9 +61,9 @@ img{
     -webkit-transition: 100ms ease;
     -o-transition: 100ms ease;
     transition: 100ms ease;
-    }
+}
 
- .ani {
+.ani {
     display:block;
     width:258px;
     height:258px;
@@ -191,29 +191,82 @@ img{
     bottom: 30px;
     font-family: Raleway;
     font-size: 15px;
-    }
+}
     
 #snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.4s, fadeout 0.4s 2.6s;
     animation: fadein 0.4s, fadeout 0.4s 2.6s;
-    }
+}
     
-    @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}}
-    
-    @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}}
-    
-    @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
-    to {bottom: 0; opacity: 0;}}
-    
-    @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}}
+@-webkit-keyframes fadein {
+from {bottom: 0; opacity: 0;} 
+to {bottom: 30px; opacity: 1;}}
+
+@keyframes fadein {
+from {bottom: 0; opacity: 0;}
+to {bottom: 30px; opacity: 1;}}
+
+@-webkit-keyframes fadeout {
+from {bottom: 30px; opacity: 1;} 
+to {bottom: 0; opacity: 0;}}
+
+@keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}}
+
+.back-to-top {
+    position: relative;
+    z-index: 3;
+}
+
+.btn-dark.hide {
+    display: none !important;
+}
+
+.btn-dark.show {
+    display: block !important;
+}
+
+.back-to-top .btn-dark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    position: fixed;
+    bottom: 15px;
+    right: 12px;
+    background: rgba(48, 165, 32, 0.863);
+    border-color: rgb(35, 153, 20);
+    display: none;
+    z-index: 3;
+    -webkit-transition: all 0.1s linear, font-size 0.15s ease-in-out;
+    -o-transition: all 0.1s linear, font-size 0.15s ease-in-out;
+    transition: all 0.1s linear, font-size 0.15s ease-in-out;
+    font-size: 18px;
+}
+.btn-dark:focus, .btn-dark.focus {
+    box-shadow: 0 0 0 0.2rem rgba(100, 139, 103, 0.5) !important;
+}
+
+.btn-dark .fa {
+    position: absolute;
+    top: 11px;
+    right: 0px;
+    left: 0px;
+    transition: top 0.3s ease-in-out;
+}
+
+.btn-dark:hover > .fa {
+    top: 4.5px;
+}
+
+.back-to-top .btn-dark:hover {
+    cursor: pointer;
+    font-size: 23px;
+    background: rgb(35, 153, 20);
+    border-color: rgb(48, 202, 28);
+}
 
 footer{
     /* position: fixed; */
@@ -280,6 +333,7 @@ footer{
     
 .footer-distributed .footer-center{
     width: 35%;
+    margin-right: 20px;
 }
     
 .footer-distributed .footer-center i{
@@ -1139,6 +1193,7 @@ footer{
 	.footer-distributed .footer-center{
         display: block;
 		width: 100%;
+        margin-right: 0px;
 		margin-bottom: 40px;
 		text-align: center;}
  
@@ -1684,6 +1739,7 @@ footer{
 	.footer-distributed .footer-center{
         display: block;
 		width: 100%;
+        margin-right: 0px;
 		margin-bottom: 40px;
 		text-align: center;}
  
