@@ -36,17 +36,22 @@ const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 0) {
         if(pre<c){
-            return;
+            return document.querySelector('html').removeAttribute('style');
         }
         else{
             pre = c;
             window.requestAnimationFrame(scrollToTop);
-            window.scrollTo(0, c - c / 25);
+            // window.scrollTo(0, c - c / 25);
+            window.scrollTo(0, c - c / 60);
         }
+    }
+    if (c == 0) {
+        document.querySelector('html').removeAttribute('style');
     }
 };
 scrollToTopButton.onclick = function (e) {
     e.preventDefault();
+    document.querySelector('html').style.scrollBehavior = 'initial';
     pre = document.documentElement.scrollTop || document.body.scrollTop;
     scrollToTop();
 }
