@@ -59,8 +59,8 @@ scrollToTopButton.onclick = function (e) {
 
 function Get_Current_Year(){var current_date = new Date();var current_year = current_date.getFullYear();document.getElementById("get_current_year").innerHTML = current_year;}
 function snackbar(Notification) {var x = document.getElementById("snackbar");x.innerHTML=Notification;x.className = "show";setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);}
-function open_search(){document.getElementById('search_form').style.visibility = "visible";document.getElementById('search_form').style.right="5%";document.getElementById('search-btn').style.display="none";document.getElementById('close-btn').style.display="inline";setTimeout(function(){ document.getElementById('search-input-box').focus() }, 500);}
-function close_search(){document.getElementById('search_form').style.visibility = "hidden";document.getElementById('search_form').style.right="-350px";document.getElementById('close-btn').style.display="none";document.getElementById('search-btn').style.display="inline";document.getElementById('search-input-box').value=""}
+function open_search(){document.getElementById('search_form').style.visibility = "visible";document.getElementById('search_form').style.right="5%";document.getElementById('search-btn').style.display="none";document.getElementById('close-btn').style.display="inline";setTimeout(function(){ document.getElementById('search-input-box').focus() }, 500);document.getElementById('body').style.userSelect="text";}
+function close_search(){document.getElementById('search_form').style.visibility = "hidden";document.getElementById('search_form').style.right="-350px";document.getElementById('close-btn').style.display="none";document.getElementById('search-btn').style.display="inline";document.getElementById('search-input-box').value="";document.getElementById('body').removeAttribute('style');displayBody();}
 function loader(){setTimeout(displayBody,4000);}
 function displayBody(){document.getElementById('body').style.display = "block";document.getElementById('pre-load').style.display = "none";}
 function disable_Preloader(){}
